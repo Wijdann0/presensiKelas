@@ -17,6 +17,9 @@
   padding: 0;
   margin: 0;
 }
+.pd {
+  text-decoration: none;
+}
 .height {
   height: 80px;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid bg-black">
+  <div class="container-fluid psh">
     <div class="row text-center pp">
       <div class="col">
         <h1 class="text-white">Presensi Kelas</h1>
@@ -21,10 +21,15 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col text-white text-center pb-5">
+        <p>&copy; CopyRightBy@Di-Tech</p>
+      </div>
+    </div>
     <div class="row kbl">
       <div class="col-lg-3">
         <nuxt-link to="/">
-          <button class="btn btn-danger">Kembali</button>
+          <button class="btn btn-light">Kembali</button>
         </nuxt-link>
       </div>
     </div>
@@ -32,8 +37,14 @@
 </template>
 
 <style scoped>
+.psh {
+  min-height: 100vh;
+  background: rgb(26, 26, 26) !important;
+}
 .kbl{
-  padding: 40px;
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-bottom: 70px;
 }
 
 .btn{
@@ -49,8 +60,8 @@
   padding: 0px;
 }
 .pp{
-  padding-top: 100px;
-  padding-bottom: 150px
+  padding-top: 70px;
+  padding-bottom: 50px
 }
 
 .card{
@@ -62,7 +73,7 @@
 }
 
 .ps{
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 </style>
 
