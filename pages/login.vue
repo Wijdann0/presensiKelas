@@ -10,12 +10,12 @@
         <div class="card rounded-5 text-center pt-4">
           <h3 class="text-white">Login</h3>
           <div class="card-body d-flex justify-content-center pt-5">
-            <form>
-              <input type="text" class="form-control form-control-lg rounded-3 akn text-center" placeholder="Email">
-              <input type="text" class="form-control form-control-lg rounded-3 akn text-center" placeholder="Password">
-              <nuxt-link to="/halUtama">
-                <button class="btn btn-success">Login</button>
-              </nuxt-link>
+            <form @submit.prevent="log">
+              <label for="exampleInputEmail"></label>
+              <input v-model="email" type="email" class="form-control form-control-lg rounded-3 akn text-center" id="exampleInputEmail" placeholder="Email">
+              <label for="exampleInputPassword"></label>
+              <input v-model="password" type="password" class="form-control form-control-lg rounded-3 akn text-center" id="exampleInputPassword" placeholder="Password">
+              <button class="btn btn-success" type="submit">Login</button>
             </form>
           </div>
         </div>
@@ -35,6 +35,30 @@
     </div>
   </div>
 </template>
+
+<script setup>
+definePageMeta({
+  layout:'login'
+})
+
+const supa = useSupabaseClient()
+const email = ref('')
+const password = ref('')
+
+async function log(){
+  const {data,error} = await supa.auth.signInWithPassword({
+    email: email.value,
+    password: password.value,
+  })
+
+
+  if(!error){
+    navigateTo("/halUtama")
+  }
+}
+
+</script>
+
 
 <style scoped>
 .psh {
@@ -76,9 +100,3 @@
   padding-bottom: 50px;
 }
 </style>
-
-<script setup>
-definePageMeta({
-  layout:'login'
-})
-</script>

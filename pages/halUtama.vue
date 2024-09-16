@@ -49,9 +49,10 @@
   border: 1px solid lightblue;
 }
 
-.card:hover {
-  width: 550px;
-  height: 250px;
+.card:hover{
+  background-color: rgb(1, 1, 61);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 
